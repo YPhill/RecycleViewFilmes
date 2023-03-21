@@ -1,6 +1,7 @@
 package br.com.etecia.recycleviewfilmes;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -25,18 +26,30 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+
+        //criar layout novo e aplicar
+        View view;
+
+        LayoutInflater inflater = LayoutInflater.from(mContexto);
+        view = inflater.inflate(R.layout.modelo_filmes,parent, false);
+
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+        holder.idTituloFilme.setText(lstFilmes.get(position).getTitulo());
+        holder.idImgFIlmes.setImageResource(lstFilmes.get(position).getImagem());
+
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public int getItemCount()
+    {
+        return lstFilmes.size();
     }
 
     //criando classe viewholder
