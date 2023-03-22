@@ -1,6 +1,7 @@
 package br.com.etecia.recycleviewfilmes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,9 +42,26 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+        //Carrega todas as informações de uma página para outra
+
         holder.idTituloFilme.setText(lstFilmes.get(position).getTitulo());
         holder.idImgFIlmes.setImageResource(lstFilmes.get(position).getImagem());
 
+        holder.idCardFilmes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(mContexto, ApresentaFilmeActivity.class);
+
+                intent.putExtra("Titulo", lstFilmes.get(position).getTitulo());
+                intent.putExtra("Categoria", lstFilmes.get(position).getCategoria());
+                intent.putExtra("Descricao", lstFilmes.get(position).getDescricao());
+                intent.putExtra("ImagemFilme", lstFilmes.get(position).getImagem());
+
+                mContexto.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
+            }
+        });
     }
 
     @Override
