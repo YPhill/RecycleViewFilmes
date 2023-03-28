@@ -1,6 +1,8 @@
 package br.com.etecia.recycleviewfilmes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.widget.ToolbarWidgetWrapper;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,17 +20,29 @@ public class ApresentaFilmeActivity extends AppCompatActivity {
 
     Button btnVoltar;
 
+    Toolbar idToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.apresenta_filme_layout);
 
 
-        mTituloFilme = findViewById(R.id.aprTituloFilme);
-        mCategoriaFilme = findViewById(R.id.aprCategoriaFilme);
-        mDescricao = findViewById(R.id.aprDescricao);
-        mImagemFilme = findViewById(R.id.aprImagemFilme);
+        mTituloFilme = findViewById(R.id.mTituloFilme);
+        mCategoriaFilme = findViewById(R.id.mCategoriaFilme);
+        mDescricao = findViewById(R.id.mDescricao);
+        mImagemFilme = findViewById(R.id.mImagemFilme);
         btnVoltar = findViewById(R.id.btnVoltar);
+        idToolbar = findViewById(R.id.idToolBar);
+
+        //clique o botão toolbar
+        idToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override

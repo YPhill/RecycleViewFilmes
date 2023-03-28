@@ -12,6 +12,7 @@
         android:theme="@style/Theme.RecycleViewFilmes"
         tools:targetApi="31">
         <activity
+            android:theme="@style/TemaSemBarra"
             android:name=".ApresentaFilmeActivity"
             android:exported="false" />
         <activity

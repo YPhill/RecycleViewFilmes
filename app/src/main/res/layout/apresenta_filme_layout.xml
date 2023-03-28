@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".ApresentaFilmeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/idToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/baseline_arrow_back"
+        style=""
+        />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +22,7 @@
         android:text="voltar"/>
 
     <TextView
-        android:id="@+id/aprTituloFilme"
+        android:id="@+id/mTituloFilme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -24,7 +32,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/aprImagemFilme"
+        android:id="@+id/mImagemFilme"
         android:layout_width="300dp"
         android:layout_height="406dp"
         android:layout_gravity="center"
@@ -39,7 +47,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/aprCategorias"
+            android:id="@+id/mCategorias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -49,7 +57,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/aprCategoriaFilme"
+            android:id="@+id/mCategoriaFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -78,7 +86,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/aprDescricao"
+        android:id="@+id/mDescricao"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
